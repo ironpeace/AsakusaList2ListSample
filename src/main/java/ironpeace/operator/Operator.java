@@ -12,10 +12,13 @@ public abstract class Operator {
 
 	@GroupSort
 	public void gsort(
-			@Key(group={"keycode","term"})
+			@Key(group="keycode")
 			List<Model> list,
 			Result<Model> result
 			){
+
+		System.out.println("***************************");
+		System.out.println("list size : " + list.size());
 		
 		for(Model m : list){
 			result.add(alarmImpl(m, list));
@@ -23,6 +26,8 @@ public abstract class Operator {
 	}
 	
 	private Model alarmImpl(Model target, List<Model> list){
+		System.out.println("list size : " + list.size());
+		
 		int preTerm = target.getTerm() - 1;
 		int prePreTerm = target.getTerm() - 2;
 		
@@ -30,14 +35,20 @@ public abstract class Operator {
 		Model prePre = null;
 		
 		for(Model m : list){
+			
+			System.out.println("target term : " + target.getTerm() + "***************************");
+			System.out.println("m term : " + m.getTerm() + "***************************");
+			
 			if(pre != null && prePre != null){
 				break;
 			}else{
 				if(m.getTerm() == preTerm){
 					pre = m;
+					System.out.println("pre term : " + pre.getTerm() + "***************************");
 				}
 				if(m.getTerm() == prePreTerm){
 					prePre = m;
+					System.out.println("prePre term : " + prePre.getTerm() + "***************************");
 				}
 			}
 		}
@@ -45,6 +56,7 @@ public abstract class Operator {
 		if(pre != null && prePre != null){
 			return alarmImplImpl(target, pre, prePre);
 		}else{
+			target.setFlgAsString("NONE");
 			return target;
 		}
 		
@@ -52,9 +64,9 @@ public abstract class Operator {
 	
 	private Model alarmImplImpl(Model target, Model pre, Model prePre){
 	
-		System.out.println("targetField : " + target.getField());
-		System.out.println("preField : " + pre.getField());
-		System.out.println("prePreField : " + prePre.getField());
+//		System.out.println("targetField : " + target.getField());
+//		System.out.println("preField : " + pre.getField());
+//		System.out.println("prePreField : " + prePre.getField());
 		
 		double sum = target.getField() + pre.getField() + prePre.getField();
 		

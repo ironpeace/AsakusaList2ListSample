@@ -1,6 +1,5 @@
 package ironpeace.batchapp.l2lBatch.jf.stage0001;
 import com.asakusafw.runtime.flow.SegmentedWritable;
-import com.asakusafw.runtime.value.IntOption;
 import com.asakusafw.runtime.value.StringOption;
 import ironpeace.modelgen.dmdl.model.Model;
 import java.io.DataInput;
@@ -22,17 +21,12 @@ import java.io.IOException;
      */
     public StringOption groupElem0Term1 = new StringOption();
     /**
-     * Operator.gsort#listが利用するキー (term)
-     */
-    public IntOption groupElem0Term2 = new IntOption();
-    /**
      * Operator.gsort#listのキーの元になるモデルオブジェクトを設定する
      * @param source 設定するモデルオブジェクト
      */
     public void setPort1(Model source) {
         this.portId = 1;
         this.groupElem0Term1.copyFrom(source.getKeycodeOption());
-        this.groupElem0Term2.copyFrom(source.getTermOption());
     }
     /**
      * 指定のキーのグループ情報をこのオブジェクトに複製する
@@ -46,7 +40,6 @@ import java.io.IOException;
         switch(this.portId) {
             case 1:
                 this.groupElem0Term1.copyFrom(original.groupElem0Term1);
-                this.groupElem0Term2.copyFrom(original.groupElem0Term2);
                 break;
             default:
                 throw new AssertionError(this.portId = original.portId);
@@ -57,7 +50,6 @@ import java.io.IOException;
             case 1:
                 out.writeInt(1);
                 this.groupElem0Term1.write(out);
-                this.groupElem0Term2.write(out);
                 break;
             default:
                 throw new AssertionError(this.portId);
@@ -68,7 +60,6 @@ import java.io.IOException;
         switch(this.portId) {
             case 1:
                 this.groupElem0Term1.readFields(in);
-                this.groupElem0Term2.readFields(in);
                 break;
             default:
                 throw new AssertionError(this.portId);

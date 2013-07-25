@@ -4,7 +4,7 @@ import com.asakusafw.runtime.flow.ArrayListBuffer;
 import ironpeace.modelgen.dmdl.model.Model;
 import ironpeace.operator.OperatorImpl;
 /**
- * {@code [list->Operator.gsort(operator#511811991)]}の処理を担当するマッププログラムの断片。
+ * {@code [list->Operator.gsort(operator#648734830)]}の処理を担当するマッププログラムの断片。
  */
 @SuppressWarnings("deprecation") public final class ReduceFragment2 extends com.asakusafw.runtime.flow.Rendezvous<
         ShuffleValue> {

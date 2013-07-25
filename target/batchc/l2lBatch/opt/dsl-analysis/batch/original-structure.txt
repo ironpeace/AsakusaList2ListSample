@@ -5,6 +5,6 @@ flow: JF
     output:
         ttModel (ironpeace.jobflow.ModelToCsv)
     flow: ironpeace.jobflow.JF
-        output: OutputDescription{name=ttModel, type=class ironpeace.modelgen.dmdl.model.Model}
         operator: ironpeace.operator.Operator#gsort([interface java.util.List, interface com.asakusafw.runtime.core.Result])[]
+        output: OutputDescription{name=ttModel, type=class ironpeace.modelgen.dmdl.model.Model}
         input: InputDescription{name=model, type=class ironpeace.modelgen.dmdl.model.Model}

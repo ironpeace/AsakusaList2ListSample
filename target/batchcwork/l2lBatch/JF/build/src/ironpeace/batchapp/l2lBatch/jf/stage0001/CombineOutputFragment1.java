@@ -4,7 +4,7 @@ import com.asakusafw.runtime.flow.ResultOutput;
 import ironpeace.modelgen.dmdl.model.Model;
 import org.apache.hadoop.mapreduce.TaskInputOutputContext;
 /**
- * {@code list->Operator.gsort(operator#511811991)}へのシャッフル処理を担当するプログラムの断片。
+ * {@code list->Operator.gsort(operator#648734830)}へのシャッフル処理を担当するプログラムの断片。
  */
 @SuppressWarnings("deprecation") public final class CombineOutputFragment1 implements Result<Model> {
     private final TaskInputOutputContext<?, ?, ? super ShuffleKey, ? super ShuffleValue> collector;

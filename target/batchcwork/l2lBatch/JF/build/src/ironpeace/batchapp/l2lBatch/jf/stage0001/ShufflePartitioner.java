@@ -13,7 +13,6 @@ import org.apache.hadoop.mapreduce.Partitioner;
         switch(portId) {
             case 1:
                 result = result * 31 + key.groupElem0Term1.hashCode();
-                result = result * 31 + key.groupElem0Term2.hashCode();
                 break;
             default:
                 throw new AssertionError(portId);

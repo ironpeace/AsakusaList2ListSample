@@ -2,7 +2,7 @@ package ironpeace.batchapp.l2lBatch.jf.stage0001;
 import com.asakusafw.runtime.core.Result;
 import ironpeace.modelgen.dmdl.model.Model;
 /**
- * {@code [in->padding(pseud#1352126502)]}の処理を担当するマッププログラムの断片。
+ * {@code [in->padding(pseud#511811991)]}の処理を担当するマッププログラムの断片。
  */
 @SuppressWarnings("deprecation") public final class MapFragment1 implements Result<Model> {
     private final Result<Model> out;

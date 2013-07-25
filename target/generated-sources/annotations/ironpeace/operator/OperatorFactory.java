@@ -32,8 +32,8 @@ import javax.annotation.Generated;
             builder.declare(Operator.class, OperatorImpl.class, "gsort");
             builder.declareParameter(List.class);
             builder.declareParameter(Result.class);
-            builder.addInput("list", list, new ShuffleKey(Arrays.asList(new String[]{"keycode", "term"}), Arrays.asList(
-                    new ShuffleKey.Order[]{})));
+            builder.addInput("list", list, new ShuffleKey(Arrays.asList(new String[]{"keycode"}), Arrays.asList(new 
+                    ShuffleKey.Order[]{})));
             builder.addOutput("result", Model.class);
             builder.addAttribute(FlowBoundary.SHUFFLE);
             builder.addAttribute(ObservationCount.DONT_CARE);
@@ -60,8 +60,7 @@ import javax.annotation.Generated;
      */
     @OperatorInfo(kind = CoGroup.class, input = {@OperatorInfo.Input(name = "list", type = Model.class, position = 0)}, 
             output = {@OperatorInfo.Output(name = "result", type = Model.class)}, parameter = {}) public OperatorFactory
-            .Gsort gsort(@KeyInfo(group = {@KeyInfo.Group(expression = "keycode"),@KeyInfo.Group(expression = "term")}, 
-            order = {}) Source<Model> list) {
+            .Gsort gsort(@KeyInfo(group = {@KeyInfo.Group(expression = "keycode")}, order = {}) Source<Model> list) {
         return new OperatorFactory.Gsort(list);
     }
 }
