@@ -1,0 +1,7 @@
+digraph {
+    "09d3487b-af0c-473a-908d-7be3ba0997e9" [shape=invhouse, label="model"];
+    "584a87c1-ecab-43fd-9048-05451f8158e8" [shape=invhouse, label="ttModel"];
+    "a45eccaf-3a77-42c3-ac30-1cca9f9a223a" [shape=box, label="@CoGroup\nOperator.gsort"];
+    "09d3487b-af0c-473a-908d-7be3ba0997e9" -> "a45eccaf-3a77-42c3-ac30-1cca9f9a223a" [label="port>list"];
+    "a45eccaf-3a77-42c3-ac30-1cca9f9a223a" -> "584a87c1-ecab-43fd-9048-05451f8158e8" [label="result>port"];
+}

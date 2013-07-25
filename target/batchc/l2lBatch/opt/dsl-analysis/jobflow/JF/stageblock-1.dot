@@ -1,0 +1,13 @@
+digraph {
+    "a168db47-6502-42f5-9e90-17453ba069c5" [shape=invhouse, label="ttModel"];
+    "46ea2d20-e937-4af0-8b02-f534a4ee6505" [shape=invhouse, label="model"];
+    subgraph "cluster_74f33da7-6e21-4705-b6bd-a78bc3f5f0a6" {
+        label = "stage0001";
+        style = bold;
+        "6852044f-bbd9-4f02-84dd-843e5de8e1fa" [shape=box, label="@CoGroup\nOperator.gsort"];
+        "75a3a7aa-9c80-45b8-8222-a718f996469f" [shape=point];
+    }
+    "75a3a7aa-9c80-45b8-8222-a718f996469f" -> "6852044f-bbd9-4f02-84dd-843e5de8e1fa" [label="out>list"];
+    "6852044f-bbd9-4f02-84dd-843e5de8e1fa" -> "a168db47-6502-42f5-9e90-17453ba069c5" [label="result>port"];
+    "46ea2d20-e937-4af0-8b02-f534a4ee6505" -> "75a3a7aa-9c80-45b8-8222-a718f996469f" [label="port>in"];
+}

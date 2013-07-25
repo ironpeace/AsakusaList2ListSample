@@ -1,0 +1,22 @@
+"Model"
+@directio.csv(
+    has_header = TRUE,
+    datetime = "yyyy-MM-dd HH:mm:ss"
+)
+model = {
+    "keycode"
+    @directio.csv.field(name = "KEYCODE")
+    keycode : TEXT;
+
+    "term"
+    @directio.csv.field(name = "TERM")
+    term : INT;
+
+    "field"
+    @directio.csv.field(name = "FIELD")
+    field : DOUBLE;
+
+    "flg"
+    @directio.csv.field(name = "FLG")
+    flg : TEXT;
+};

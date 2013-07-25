@@ -1,0 +1,10 @@
+batch: l2lBatch
+flow: JF
+    input:
+        model (ironpeace.jobflow.ModelFromCsv)
+    output:
+        ttModel (ironpeace.jobflow.ModelToCsv)
+    flow: ironpeace.jobflow.JF
+        output: OutputDescription{name=ttModel, type=class ironpeace.modelgen.dmdl.model.Model}
+        operator: ironpeace.operator.Operator#gsort([interface java.util.List, interface com.asakusafw.runtime.core.Result])[]
+        input: InputDescription{name=model, type=class ironpeace.modelgen.dmdl.model.Model}
